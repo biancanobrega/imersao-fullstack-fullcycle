@@ -15,15 +15,15 @@ func TestNewTransaction(t *testing.T) {
 	bank, _ := model.NewBank(code, name)
 
 	accountNumber := "abcnumber"
-	ownerName := "Wesley"
+	ownerName := "Bianca"
 	account, _ := model.NewAccount(bank, accountNumber, ownerName)
 
 	accountNumberDestination := "abcdestination"
-	ownerName = "Mariana"
+	ownerName = "Cristiane"
 	accountDestination, _ := model.NewAccount(bank, accountNumberDestination, ownerName)
 
 	kind := "email"
-	key := "j@j.com"
+	key := "teste@teste.com"
 	pixKey, _ := model.NewPixKey(accountDestination, kind, key)
 
 	require.NotEqual(t, account.ID, accountDestination.ID)
@@ -55,15 +55,15 @@ func TestModel_ChangeStatusOfATransaction(t *testing.T) {
 	bank, _ := model.NewBank(code, name)
 
 	accountNumber := "abcnumber"
-	ownerName := "Wesley"
+	ownerName := "Bianca"
 	account, _ := model.NewAccount(bank, accountNumber, ownerName)
 
 	accountNumberDestination := "abcdestination"
-	ownerName = "Mariana"
+	ownerName = "Cristiane"
 	accountDestination, _ := model.NewAccount(bank, accountNumberDestination, ownerName)
 
 	kind := "email"
-	key := "j@j.com"
+	key := "teste@teste.com"
 	pixKey, _ := model.NewPixKey(accountDestination, kind, key)
 
 	amount := 3.10

@@ -24,14 +24,12 @@ func TestModel_NewPixKey(t *testing.T) {
 
 	require.NotEmpty(t, uuid.FromStringOrNil(pixKey.ID))
 	require.Equal(t, pixKey.Kind, kind)
-	require.Equal(t, pixKey.Key, key)
 	require.Equal(t, pixKey.Status, "active")
 
 	kind = "cpf"
 	_, err = model.NewPixKey(account, kind, key)
 	require.Nil(t, err)
 
-	_, err = model.NewPixKey(account, "name", key)
+	_, err = model.NewPixKey(account, "nome", key)
 	require.NotNil(t, err)
-
 }
